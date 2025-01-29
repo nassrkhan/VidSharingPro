@@ -15,7 +15,7 @@ This is a scalable video-sharing platform built with Django, containerized using
 
 🛠 Tech Stack
 Backend: Django, PostgreSQL
-Frontend: HTML, CSS, JavaScript
+Frontend: Bootstrap, JavaScript
 Containerization: Docker, Docker Compose
 Deployment: Microsoft Azure (App Services, Blob Storage)
 Web Server: Nginx + Gunicorn
