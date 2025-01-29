@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/57d3a41c-6092-4c78-9cf5-20b5a30e2a4e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/vidSharingApp",
+    "appService.deploySubpath": "."
+}

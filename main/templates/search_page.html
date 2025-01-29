@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container my-4">
+    <h3>Search Results for: "{{ query }}"</h3>
+
+    <!-- Video Results -->
+    <h4>Video Results:</h4>
+    {% if video_results %}
+    <div class="row">
+        {% for video in video_results %}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card my-3" style="width: 18rem;">
+                <img src="{% static video.thumbnail.url %}" class="img-thumbnail card-img-top" style="height: 250px;" alt="Video Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">{{ video.title }}</h5>
+                    <p class="card-text">{{ video.desc|truncatewords:6 }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No video results found.</p>
+    {% endif %}
+
+    <!-- User Results -->
+    <h4>User Results:</h4>
+    {% if user_results %}
+    <div class="row">
+        {% for user in user_results %}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card my-3" style="width: 18rem;">
+                <img src="{% static user.userdata.profile_pic.url %}" class="img-thumbnail card-img-top" style="height: 250px;" alt="User Profile Picture">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                    <p class="card-text">{{ user.userdata.about|truncatewords:6 }}</p>
+                    <a href="{% url 'profile' user.username %}" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No user results found.</p>
+    {% endif %}
+</div>
+{% endblock %}

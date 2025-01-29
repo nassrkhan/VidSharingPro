@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="container">
+      <div class="row my-4">
+
+        {% for video in all_videos %}
+          <a href="{% url 'watch_video' video.id %}" style="text-decoration: none;">
+            <img src="{% static video.thumbnail.url %}" class="w-100">
+          </a>
+          <a href="{% url 'watch_video' video.id %}" style="text-decoration: none;">
+            <h6>{{video.title}}</h6>  
+          </a>
+          <span class="text-muted">{{video.video_views.all.count}} views • {{video.pub_date}}</span>
+
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}    
