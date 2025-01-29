@@ -22,7 +22,7 @@ Web Server: Nginx + Gunicorn
 
 Future Enhancements
 🔹 AI-powered content recommendations
-🔹 Video processing with FFmpeg
-🔹 Mobile-friendly UI
+🔹 Video processing
+🔹 User-friendly UI
 
 #Django #Docker #Azure #WebApp #VideoStreaming #CloudComputing
